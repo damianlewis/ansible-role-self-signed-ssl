@@ -1,0 +1,3 @@
+---
+# A list of hosts to generate certificates for
+self_signed_ssl_hosts: []
