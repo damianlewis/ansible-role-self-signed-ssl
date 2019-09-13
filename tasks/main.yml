@@ -4,3 +4,15 @@
     name: "{{ self_signed_ssl_openssl_package }}"
     update_cache: yes
     cache_valid_time: 86400
+
+- name: Ensure directories exists for SSL certificate assets
+  file:
+    path: "{{ item.path }}"
+    state: directory
+    mode: "{{ item.mode }}"
+    owner: "{{ self_signed_ssl_owner }}"
+    group: "{{ self_signed_ssl_group }}"
+  loop:
+  - { path: "{{ self_signed_ssl_private_key_path }}",  mode: "{{ self_signed_ssl_mode }}" }
+  - { path: "{{ self_signed_ssl_csr_path }}",  mode: "{{ self_signed_ssl_mode }}" }
+  - { path: "{{ self_signed_ssl_certificate_path }}",  mode: "{{ self_signed_ssl_mode }}" }

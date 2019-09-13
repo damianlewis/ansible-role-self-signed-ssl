@@ -1,3 +1,13 @@
 ---
 # The OpenSSL package to use
 self_signed_ssl_openssl_package: python-openssl
+
+# Owner, group and mode for SSL assets
+self_signed_ssl_owner: root
+self_signed_ssl_group: root
+self_signed_ssl_mode: '0700'
+
+# SSL asset paths
+self_signed_ssl_private_key_path: /etc/ssl/private
+self_signed_ssl_csr_path: /etc/ssl/csr
+self_signed_ssl_certificate_path: /etc/ssl/self-signed-certs
