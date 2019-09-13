@@ -21,3 +21,10 @@
   openssl_privatekey:
     path: "{{ self_signed_ssl_private_key_path }}/{{ item }}.pem"
   loop: "{{ self_signed_ssl_hosts }}"
+
+- name: Generate OpenSSL CSR's
+  openssl_csr:
+    path: "{{ self_signed_ssl_csr_path }}/{{ item }}.csr"
+    privatekey_path: "{{ self_signed_ssl_private_key_path }}/{{ item }}.pem"
+    common_name: "{{ item }}"
+  loop: "{{ self_signed_ssl_hosts }}"
