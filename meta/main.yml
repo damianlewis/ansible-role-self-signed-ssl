@@ -1,0 +1,25 @@
+galaxy_info:
+  role_name: self_signed_ssl
+  author: Damian Lewis
+  description: Generates self-signed SSL certificates
+  license: MIT
+
+  min_ansible_version: 2.5
+
+  platforms:
+  - name: Debian
+    versions:
+    - all
+  - name: Ubuntu
+    versions:
+    - all
+
+  galaxy_tags:
+  - certificates
+  - encryption
+  - https
+  - selfsigned
+  - ssl
+  - tls
+
+dependencies: []
