@@ -1,0 +1,6 @@
+---
+- name: Ensure OpenSSL is installed
+  apt:
+    name: "{{ self_signed_ssl_openssl_package }}"
+    update_cache: yes
+    cache_valid_time: 86400
