@@ -13,9 +13,9 @@
     owner: "{{ self_signed_ssl_owner }}"
     group: "{{ self_signed_ssl_group }}"
   loop:
-  - { path: "{{ self_signed_ssl_private_key_path }}",  mode: "{{ self_signed_ssl_mode }}" }
-  - { path: "{{ self_signed_ssl_csr_path }}",  mode: "{{ self_signed_ssl_mode }}" }
-  - { path: "{{ self_signed_ssl_certificate_path }}",  mode: "{{ self_signed_ssl_mode }}" }
+  - { path: "{{ self_signed_ssl_private_key_path }}",  mode: '0700' }
+  - { path: "{{ self_signed_ssl_csr_path }}",  mode: '0755' }
+  - { path: "{{ self_signed_ssl_certificate_path }}",  mode: '0755' }
 
 - name: Generate OpenSSL private keys
   openssl_privatekey:
